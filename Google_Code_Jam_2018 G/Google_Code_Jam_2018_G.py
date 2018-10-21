@@ -1,9 +1,20 @@
 #Kuldeep Thakre kuldeep-kd@live.com
 import math
 
+def fact(x):
+    ans = x
+    while x > 1:
+        temp = ans % 100
+        ans = temp * (x - 1)
+        x -= 1
+    return ans
+
+
 def calc(data_list):
     if data_list[0] == 1:
         return (data_list[0] % data_list[2])
+    if data_list[1] > 9:
+        return (data_list[0]**fact(data_list[1])) % data_list[2]
     return (data_list[0]**math.factorial(data_list[1])) % data_list[2]
 
 def get_list(filename="input_file.txt"):
